@@ -1,0 +1,67 @@
+﻿# Define a class
+class Automobile
+{
+   
+      [int] $Year
+   [string] $Make
+   [string] $Model
+   [string] $Color
+
+   # Constructor
+   Automobile ([int] $y, [string] $mk, [string] $mdl, [string] $clr)
+   {
+       $this.Year  = $y
+       $this.Make  = $mk
+       $this.Model = $mdl
+       $this.Color = $clr      
+   }
+   Automobile (){}
+
+   Accelerate()
+   {
+       Write-Host "Vroom, Vroom"
+   }
+
+   PlayMusic()
+   {
+       Write-Host "Hi, my name is...what?...my name is...who?...sicka, sicka slim shady."
+   }
+
+   static Message()
+   {
+       Write-Host "The writing is on the wall."
+   }
+}
+
+class Canine # dog to the lay person
+{
+    [string] $Breed
+    [string] $Color
+    [string] $Size
+
+    #Constructor
+    Canine ([string] $brd, [string] $clr, [string] $sz)
+    {
+        $this.Breed = $brd
+        $this.Color = $clr
+        $this.Size  = $sz
+    }
+    Canine(){}
+
+    Speak()
+    {
+        Write-Host "Bark, Bark"
+    }
+}
+
+function New-Automobile ()
+{
+    [automobile]::new()
+}
+
+function New-Canine ()
+{
+    [canine]::new()
+}
+
+Export-ModuleMember "New-Automobile", "New-Canine"
